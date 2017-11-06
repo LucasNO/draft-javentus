@@ -1,1 +1,1 @@
-web: java -jar target/javentus-0.0.1-SNAPSHOT.jar
+web: java -jar target/javentus-0.0.1-SNAPSHOT.jar -Dhttp.port=${PORT} -Dplay.evolutions.db.default.autoApply=true -Ddb.default.driver=com.mysql.jdbc.Driver -Ddb.default.url=${CLEARDB_DATABASE_URL}
