@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Jogador</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+        <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div th:replace="/fragments/header :: header">Header</div>
+        <br/>
+        <br/>
+        <div class="container">
+            <h2>Lista de Jogadores</h2>
+                <table class="table"> 
+                    <thead>
+                        <tr>
+                            <th>Jogadores</th>
+                            <th>Posicao</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="jogador : ${jogadores}">
+                            <td th:text="${jogador.nome}"></td>
+                            <td th:text="${jogador.pos.descricao}"></td>
+                            <td>
+                                <a class="btn btn-primary btn-xs" th:href="@{/admin/jogador/edit/{id}(id=${jogador.id})}" >Editar</a>
+                                <a class="btn btn-danger btn-xs" th:href="@{/admin/jogador/delete/{id}(id=${jogador.id})}">Excluir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+
+            <div class="panel-footer">
+                <a class="btn btn-sm btn-success" th:href="@{/admin/jogador/add/}">Cadastrar Jogador</a>
+            </div>
+        </div>
+    </body>
+</html>

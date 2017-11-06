@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Home</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+    </head>
+
+    <body>
+        <div th:replace="/fragments/header :: header">Header</div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="container">
+            <h2>Outros Times</h2>
+            <ul>
+                <li th:each="element : ${jogadores}">
+                    <span th:text="${element.key}" style="font-size: 36px; font-weight:bold;"></span>
+                    <table class="table ">
+                        <thead>
+                            <th style="width: 400px">Jogador</th>
+                            <th style="width: 400px">Posição</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr th:each="jogadores : ${element.value}">
+                                <td th:text="${jogadores.nome}"></td>
+                                <td th:text="${jogadores.pos.descricao}"></td>
+                                <td>
+                                    <div >
+                                        <a class="btn btn-primary btn-xs">Propor Transferencia</a>
+                                        <a class="btn btn-danger btn-xs" th:href="@{/admin/meuTime/dispensarJogador/{id}(id=${jogador.id})}">Dispensar Jogador</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <hr/>
+                    <br/>
+                </li>
+            </ul>
+        </div>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

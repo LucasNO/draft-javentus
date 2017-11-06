@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Posts</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+    </head>
+    <body>
+        <div th:replace="/fragments/header :: header">Header</div>
+        <br/>
+        <br/>
+        <div class="container">
+            <h2>Posições Cadastradas</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="posicao : ${posicoes}">
+                        <td th:text="${posicao.descricao}"></td>
+                        <td>
+                            <a class="btn btn-primary btn-xs" th:href="@{/admin/posicao/edit/{id}(id=${posicao.id})}" >Editar</a>
+                            <a class="btn btn-danger btn-xs" th:href="@{/admin/posicao/delete/{id}(id=${posicao.id})}">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <a class="btn btn-sm btn-success" th:href="@{/admin/posicao/add/}" >Cadastrar Posição</a>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

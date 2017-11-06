@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Free Agents</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+    </head>
+    <body>
+        <div th:replace="/fragments/header :: header">Header</div>
+        <br/>
+        <br/>
+        <div class="container">
+            <h2>Jogadores Sem Clube</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Jogadores</th>
+                        <th>Posição</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="jogador : ${jogadores}">
+                        <td th:text="${jogador.nome}"></td>
+                        <td th:text="${jogador.pos.descricao}"></td>
+                        <td>
+                            <div>
+                                <a class="btn btn-primary btn-xs" th:href="@{/admin/jogador/contratarJogador/{id}(id=${jogador.id})}">Contratar Jogador</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
