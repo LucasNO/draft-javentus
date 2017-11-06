@@ -1,1 +1,1 @@
-web: java -jar target/javentus-0.0.1-SNAPSHOT.jar -Ddb.default.driver=com.mysql.jdbc.Driver -Ddb.default.url=${CLEARDB_DATABASE_URL}
+web: java -jar target/javentus-0.0.1-SNAPSHOT.jar
