@@ -1,1 +1,1 @@
-web: java -jar target/javentus-0.0.1-SNAPSHOT.jar -Dhttp.port=${PORT}
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.jar  
