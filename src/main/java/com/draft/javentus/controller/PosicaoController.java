@@ -21,9 +21,9 @@ public class PosicaoController {
     @Autowired
     private PosicaoService posicaoService;
 
-    @GetMapping("/admin/posicao")
+    @GetMapping("admin/posicao")
     public ModelAndView findAll() {
-        ModelAndView mv = new ModelAndView("/admin/posicao");
+        ModelAndView mv = new ModelAndView("admin/posicao");
         mv.addObject("posicoes", posicaoService.findAll());
         return mv;
     }
