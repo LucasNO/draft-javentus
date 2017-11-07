@@ -31,7 +31,7 @@ public class PosicaoController {
     @GetMapping("/admin/posicao/add")
     public ModelAndView add(Posicao posicao) {
 
-        ModelAndView mv = new ModelAndView("/admin/posicaoAdd");
+        ModelAndView mv = new ModelAndView("admin/posicaoAdd");
         mv.addObject("posicao", posicao);
 
         return mv;
