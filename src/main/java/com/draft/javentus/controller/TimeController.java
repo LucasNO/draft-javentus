@@ -60,7 +60,7 @@ public class TimeController {
 
     @GetMapping("/admin/meuTime")
     public ModelAndView findJogadores() {
-        ModelAndView mv = new ModelAndView("/admin/meuTime");
+        ModelAndView mv = new ModelAndView("admin/meuTime");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         Usuario user = userService.findUserByEmail(auth.getName());
         Time t = timeService.carregarTimeUsuario(user);
@@ -70,7 +70,7 @@ public class TimeController {
 
     @GetMapping("/admin/outrosTimes")
     public ModelAndView findOutrosTimes() {
-        ModelAndView mv = new ModelAndView("/admin/outrosTimes");
+        ModelAndView mv = new ModelAndView("admin/outrosTimes");
         init();
         jogadoresList = popularTimes(timesList);
         mv.addObject("jogadores",  jogadoresList);
