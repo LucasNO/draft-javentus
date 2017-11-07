@@ -45,14 +45,14 @@ public class JogadorController {
 
     @GetMapping("/admin/jogador")
     public ModelAndView findAll() {
-        ModelAndView mv = new ModelAndView("/admin/jogador");
+        ModelAndView mv = new ModelAndView("admin/jogador");
         mv.addObject("jogadores", jogadorService.findAll());
         return mv;
     }
 
     @GetMapping("/admin/freeAgents")
     public ModelAndView findAllFreeAgents() {
-        ModelAndView mv = new ModelAndView("/admin/freeAgents");
+        ModelAndView mv = new ModelAndView("admin/freeAgents");
         mv.addObject("jogadores", jogadorService.carregarFreeAgents());
         return mv;
     }
@@ -61,7 +61,7 @@ public class JogadorController {
     public ModelAndView add(Jogador jogador) {
 
         posList = posicaoService.findAll();
-        ModelAndView mv = new ModelAndView("/admin/jogadorAdd");
+        ModelAndView mv = new ModelAndView("admin/jogadorAdd");
         mv.addObject("jogador", jogador);
         mv.addObject("posicoes", posList);
         return mv;
