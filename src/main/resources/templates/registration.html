@@ -20,7 +20,7 @@
                     <form autocomplete="off" action="#" th:action="@{/registration}"
                           th:object="${usuario}" method="post" class="form-horizontal"
                           role="form">
-                        <h2>Registre-se</h2>
+                        <h2>Registration Form</h2>
                         <div class="form-group">
                             <div class="col-sm-9">
                                 <label th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
