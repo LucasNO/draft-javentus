@@ -32,7 +32,4 @@ public class Posicao implements Serializable {
     @NotNull
     @Column(name = "pos_descricao")
     private String descricao;
-    
-//    @OneToMany(mappedBy = "pos")
-//    private List<Jogador> jogadorList;
 }

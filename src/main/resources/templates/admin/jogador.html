@@ -23,6 +23,7 @@
                     <tr>
                         <th>Jogadores</th>
                         <th>Posicao</th>
+                        <th>Time</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -31,6 +32,12 @@
                     <tr th:each="jogador : ${jogadores}">
                         <td th:text="${jogador.nome}"></td>
                         <td th:text="${jogador.pos.descricao}"></td>
+
+                        <td th:if="${jogador.tim == null}"></td>
+                        
+                        <td th:if="${jogador.tim != null}" th:text="${jogador.tim.nome}"></td>
+
+
                         <td>
                             <a class="btn btn-primary btn-xs" th:href="@{/admin/jogador/edit/{id}(id=${jogador.id})}" >Editar</a>
                         </td>
