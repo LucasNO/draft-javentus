@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Jogador</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
-        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"></link>
+        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link>
     </head>
     <body>
         <div th:replace="admin/fragments/header :: header">Header</div>
@@ -17,9 +17,7 @@
         <br/>
         <div class="container">
             <h2>Lista de Jogadores</h2>
-            <div class="panel-head">
-                <a class="btn btn-sm btn-success" th:href="@{/admin/jogador/add/}">Cadastrar Jogador</a>
-            </div>
+            <br/>
             <table class="table" id="jogadores"> 
                 <thead>
                     <tr>
@@ -39,6 +37,10 @@
                     </tr>
                 </tbody>
             </table>
+            <br/>
+            <div class="panel-head">
+                <a class="btn btn-sm btn-success" th:href="@{/admin/jogador/add/}">Cadastrar Jogador</a>
+            </div>
         </div>
 
         <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
