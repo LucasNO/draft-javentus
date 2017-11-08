@@ -59,10 +59,6 @@ public class DefaultController {
     @RequestMapping(value = "/admin/home", method = RequestMethod.GET)
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView();
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Usuario user = userService.findUserByEmail(auth.getName());
-        modelAndView.addObject("userName", "Bemvindo " + user.getNome() + " (" + user.getEmail() + ")");
-        modelAndView.addObject("adminMessage", "Conteúdo disponível somente para usuários com função de administrador");
         modelAndView.setViewName("admin/home");
         return modelAndView;
     }

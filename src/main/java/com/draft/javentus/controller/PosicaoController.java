@@ -62,7 +62,7 @@ public class PosicaoController {
         } else {
             posicaoService.update(posicao);
         }
-
+        
         return findAll();
     }
 }
