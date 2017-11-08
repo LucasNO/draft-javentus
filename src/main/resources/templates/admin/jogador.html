@@ -24,6 +24,7 @@
                         <th>Jogadores</th>
                         <th>Posicao</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,24 +33,27 @@
                         <td th:text="${jogador.pos.descricao}"></td>
                         <td>
                             <a class="btn btn-primary btn-xs" th:href="@{/admin/jogador/edit/{id}(id=${jogador.id})}" >Editar</a>
+                        </td>
+                        <td>
                             <a class="btn btn-danger btn-xs" th:href="@{/admin/jogador/delete/{id}(id=${jogador.id})}">Excluir</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <br/>
-            <div class="panel-head">
+            <div class="panel-footer">
                 <a class="btn btn-sm btn-success" th:href="@{/admin/jogador/add/}">Cadastrar Jogador</a>
             </div>
+            <br/>
         </div>
 
         <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         <script>
-            $(document).ready(function() {
-            $('#jogadores').DataTable();
-            } );
+            $(document).ready(function () {
+                $('#jogadores').DataTable();
+            });
         </script>
 
     </body>
