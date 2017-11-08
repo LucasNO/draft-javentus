@@ -8,6 +8,7 @@
         <title>Posts</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
         <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"></link>
+        <link href="https://cdn.datatables.net/1.10.16/css/dataTables.jqueryui.min.css" rel="stylesheet"></link>
     </head>
     <body>
         <div th:replace="admin/fragments/header :: header">Header</div>
@@ -15,7 +16,7 @@
         <br/>
         <div class="container">
             <h2>Posições Cadastradas</h2>
-            <table id="posicoes" class="table">
+            <table id="posicoes" class="display" cellspacing="0" width="100%" >
                 <thead>
                     <tr>
                         <th>Posição</th>

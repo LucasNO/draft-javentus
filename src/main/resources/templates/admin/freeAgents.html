@@ -10,6 +10,7 @@
         <title>Free Agents</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
         <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"></link>
+        <link href="https://cdn.datatables.net/1.10.16/css/dataTables.jqueryui.min.css" rel="stylesheet"></link>
     </head>
     <body>
         <div th:replace="admin/fragments/header :: header">Header</div>
@@ -17,7 +18,7 @@
         <br/>
         <div class="container">
             <h2>Jogadores Sem Clube</h2>
-            <table class="table" id="freeAgents">
+            <table class="display" cellspacing="0" width="100%" id="freeAgents">
                 <thead>
                     <tr>
                         <th>Jogadores</th>
