@@ -21,7 +21,7 @@ public class TitulosService {
     }
     
     public List<Titulos> listarTitulos(){
-        return titulosRepository.findByOrderByPrimeiroDescSegundoDescTerceiroDesc();
+        return titulosRepository.findByOrderByPrimeiroDescSegundoDescTerceiroDescQuartoDescQuintoDesc();
     }
     
     public Titulos findOne(Integer id){

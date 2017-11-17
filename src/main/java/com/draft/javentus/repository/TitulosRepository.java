@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TitulosRepository extends JpaRepository<Titulos, Integer>{
     
-    public List<Titulos> findByOrderByPrimeiroDescSegundoDescTerceiroDesc();
+    public List<Titulos> findByOrderByPrimeiroDescSegundoDescTerceiroDescQuartoDescQuintoDesc();
     
     
 }
