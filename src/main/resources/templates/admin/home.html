@@ -16,6 +16,27 @@
         <br/>
         <br/>
         <br/>
+        <div class="container">
+            <h2>Títulos</h2>
+            <table id="titulo" class="table table-striped" cellspacing="0" width="100%" >
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>1º</th>
+                        <th>2º</th>
+                        <th>3º</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="titulos : ${titulos}">
+                        <td th:text="${titulos.usuario.nome}"></td>
+                        <td th:text="${titulos.primeiro}"></td>
+                        <td th:text="${titulos.segundo}"></td>
+                        <td th:text="${titulos.terceiro}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

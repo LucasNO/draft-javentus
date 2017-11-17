@@ -1,6 +1,7 @@
 package com.draft.javentus.controller;
 
 import com.draft.javentus.model.Usuario;
+import com.draft.javentus.service.TitulosService;
 import com.draft.javentus.service.UserService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class DefaultController {
-    
+
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private TitulosService titulosService;
 
     @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     public ModelAndView login() {
@@ -60,6 +64,7 @@ public class DefaultController {
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("admin/home");
+        modelAndView.addObject("titulos", titulosService.listarTitulos());
         return modelAndView;
     }
 
