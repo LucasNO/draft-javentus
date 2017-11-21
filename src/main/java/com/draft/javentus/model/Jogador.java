@@ -32,6 +32,9 @@ public class Jogador implements Serializable {
     @Column(name = "jog_nome")
     private String nome;
     
+    @Column(name = "jog_overall")
+    private Integer overall;
+    
     @JoinColumn(name = "pos_id", referencedColumnName = "pos_id")
     @ManyToOne
     private Posicao pos;

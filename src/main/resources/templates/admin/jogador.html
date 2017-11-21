@@ -23,6 +23,7 @@
                 <thead>
                     <tr>
                         <th>Jogadores</th>
+                        <th>Overall</th>
                         <th>Posicao</th>
                         <th>Time</th>
                         <th></th>
@@ -32,10 +33,11 @@
                 <tbody>
                     <tr th:each="jogador : ${jogadores}">
                         <td th:text="${jogador.nome}"></td>
+                        <td th:text="${jogador.overall}"></td>
                         <td th:text="${jogador.pos.descricao}"></td>
 
                         <td th:if="${jogador.tim == null}"></td>
-                        
+
                         <td th:if="${jogador.tim != null}" th:text="${jogador.tim.nome}"></td>
 
 
