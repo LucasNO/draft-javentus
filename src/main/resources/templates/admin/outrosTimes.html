@@ -26,18 +26,18 @@
                         <thead>
                             <th style="width: 400px">Jogador</th>
                             <th style="width: 400px">Posição</th>
-                            <th></th>
+                            <!--<th></th>-->
                         </thead>
                         <tbody>
                             <tr th:each="jogadores : ${element.value}">
                                 <td th:text="${jogadores.nome}"></td>
                                 <td th:text="${jogadores.pos.descricao}"></td>
-                                <td>
+<!--                                <td>
                                     <div >
                                         <a class="btn btn-primary btn-xs">Propor Transferencia</a>
                                         <a class="btn btn-danger btn-xs" th:href="@{/admin/tranferencia/jogador/{id}(id=${jogador.id})}">Dispensar Jogador</a>
                                     </div>
-                                </td>
+                                </td>-->
                             </tr>
                         </tbody>
                     </table>
