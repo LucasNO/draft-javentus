@@ -68,6 +68,11 @@ public class DefaultController {
         return modelAndView;
     }
 
+    @RequestMapping("/manifest")
+    public String manifest() {
+        return "manifest";
+    }
+
     @GetMapping("/about")
     public String about() {
         return "/about";
