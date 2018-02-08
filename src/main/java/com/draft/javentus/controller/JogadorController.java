@@ -8,7 +8,6 @@ import com.draft.javentus.service.JogadorService;
 import com.draft.javentus.service.PosicaoService;
 import com.draft.javentus.service.TimeService;
 import com.draft.javentus.service.UserService;
-import java.util.Arrays;
 import java.util.List;
 import javax.validation.Valid;
 import lombok.Getter;

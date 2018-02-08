@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,32 +20,36 @@ import lombok.Data;
  *
  * @author lucas
  */
+@Data
 @Entity
 @Table(name = "tor_torneio")
-@Data
 public class Torneio implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 857387426340590224L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "tor_id")
     private Integer id;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "tor_data")
-    @Temporal(TemporalType.DATE)
-    private Date data;
+
+//    @Basic(optional = false)
+//    @NotNull
+//    @Column(name = "tor_data")
+//    @Temporal(TemporalType.DATE)
+//    private Date data;
+
     @Basic(optional = false)
     @NotNull
     @Column(name = "tor_ativo")
-    private short ativo;
+    private Boolean ativo = Boolean.TRUE;
+
     @Basic(optional = false)
     @NotNull
     @Column(name = "tor_anoFifa")
     private int anoFifa;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "torId")
-//    private List<HistoricoConfrontos> historicoConfrontosList;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "torId")
-//    private List<HistoricoTorneio> historicoTorneioList;
+
+    @ManyToOne
+    @JoinColumn(name = "tto_id", referencedColumnName = "tto_id")
+    private TipoTorneio tto;
 }

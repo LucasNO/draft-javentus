@@ -9,59 +9,44 @@
         <link rel="manifest" href="/manifest"/>
     </head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
-            <nav>
+        <div th:fragment="header">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu"
-                                aria-expanded="false">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="#" th:href="@{/admin/home}">Draft Javentus</a>
                     </div>
-                    <div class="navbar-collapse collapse" id="menu">
-                        <ul class="nav navbar-nav nav nav-pills">
-                            <li role="presentation" class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Administração <span class="caret"></span>
-                                </a>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administração <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#" th:href="@{/admin/posicao}" >Posições</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" th:href="@{/admin/jogador}">Jogadores</a>
-                                    </li>
+                                    <li><a href="#" th:href="@{/admin/posicao}" >Posições</a></li>
+                                    <li><a href="#" th:href="@{/admin/jogador}">Jogadores</a></li>
                                 </ul>
                             </li>
-                            <li role="presentation" class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Times <span class="caret"></span>
-                                </a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Times <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#" th:href="@{/admin/meuTime}">Meu Time</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" th:href="@{/admin/freeAgents}">Free Agents</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" th:href="@{/admin/outrosTimes}">Outros Times</a>
-                                    </li>
+                                    <li><a href="#" th:href="@{/admin/meuTime}">Meu Time</a></li>
+                                    <li><a href="#" th:href="@{/admin/freeAgents}">Free Agents</a></li>
+                                    <li><a href="#" th:href="@{/admin/outrosTimes}">Outros Times</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Torneio <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" th:href="@{/admin/torneio}" >Criar Torneio</a></li>
+                                    <li><a href="#" th:href="@{/admin/confronto}" >Confrontos</a></li>
                                 </ul>
                             </li>
                         </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="/logout" th:href="@{#}" onclick="$('#form').submit();">
-                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Logout
-                                </a>
-                                <form style="visibility: hidden" id="form" method="get" action="#" th:action="@{/logout}"></form>
-                            </li>
-                        </ul>
-                    </div>
+                    </div><!--/.nav-collapse -->
                 </div>
             </nav>
         </div>
