@@ -39,7 +39,6 @@ public class TorneioController {
         } else {
             modelAndView.addObject("torneio", new Torneio());
         }
-        torneioService.gerarConfrontosTorneio(tipoTorneioService.findOne(2));
         return modelAndView;
     }
 
